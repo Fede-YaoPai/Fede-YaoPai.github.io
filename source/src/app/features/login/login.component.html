@@ -1,0 +1,24 @@
+<div class="feature-login flex justify-content-center h-full pt-4">
+  <div class="flex flex-column align-items-center gap-3">
+    <div class="mb-2 mt-4">
+      <p class="w-full mb-0">Inserire le credenziali per accedere.</p>
+    </div>
+    <form [formGroup]="loginForm" class="flex flex-column align-items-center gap-3 p-3 w-min">
+      <input type="text" pInputText [formControlName]="controlNames.username" [placeholder]="controlNames.username" (keydown.enter)="login()" />
+      <input type="password" pInputText [formControlName]="controlNames.password" [placeholder]="controlNames.password" (keydown.enter)="login()" />
+      <p-button
+        label="Login"
+        class="w-full mt-3"
+        [styleClass]="'w-full'"
+        [disabled]="!loginForm.valid"
+        [loading]="loadingButton"
+        (click)="login()">
+      </p-button>
+    </form>
+    <div class="pointer-events-none {{ !loginForm.valid && loginForm.controls[controlNames.username].dirty && loginForm.controls[controlNames.password].dirty ? 'opacity-100' : 'opacity-0' }}" >
+      <small class="block text-red-600 text-center">
+        Tutti i campi sono obbligatori.
+      </small>
+    </div>
+  </div>
+</div>
