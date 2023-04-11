@@ -4,7 +4,8 @@ export interface LoggedUser {
   lastname: string;
   username: string;
   amountLoaned?: number;
-  sex: 'M' | 'F'
+  sex: 'M' | 'F',
+  isAdmin?: boolean;
 }
 
 export interface User extends LoggedUser {

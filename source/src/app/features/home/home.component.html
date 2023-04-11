@@ -1,10 +1,10 @@
-<div class="feature-home">
+<div class="feature-home" *ngIf="loggedUser">
   <ng-container *ngIf="transactions.length; else noTransactions">
     <div class="flex flex-column align-items-center mb-4">
       <p>
         Registro transazioni per
         <strong>
-          {{ loggedUser?.name + ' ' + loggedUser?.lastname + ' (' + loggedUser?.username + ')' }}.
+          {{ loggedUser.name + ' ' + loggedUser.lastname + ' (' + loggedUser.username + ')' }}.
         </strong>
       </p>
     </div>
@@ -20,7 +20,7 @@
         <ng-template pTemplate="caption">
           <div>
             <span class="mb-3">
-              Ammontare rimborsato sul totale: {{ (getTotalReimbursed() | currency: 'EUR') + ' / ' + (loggedUser?.amountLoaned | currency: 'EUR') }}
+              Ammontare rimborsato sul totale: {{ (getTotalReimbursed() | currency: 'EUR') + ' / ' + (loggedUser.amountLoaned | currency: 'EUR') }}
             </span>
             <div style="height: 0.33rem"></div>
             <p-progressBar [value]="getTotalReimbursed(true) | number"></p-progressBar>
@@ -29,13 +29,15 @@
         <ng-template pTemplate="header">
           <tr>
             <th pSortableColumn="date">Data bonifico <p-sortIcon field="date"></p-sortIcon></th>
+            <th *ngIf="loggedUser.isAdmin">Destinatario</th>
             <th>Ammontare</th>
             <th>Screenshot</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-transaction>
           <tr>
-            <td>{{ transaction.date | date: 'shortDate' }}</td>
+            <td>{{ transaction.date | date: 'dd/MM/yyyy' }}</td>
+            <td *ngIf="loggedUser.isAdmin">{{ getTransactionRecipient(transaction.recipient)?.username || 'N/D' }}</td>
             <td>{{ transaction.amount | currency: 'EUR' }}</td>
             <td>
               <div class="w-full h-full relative pl-2">

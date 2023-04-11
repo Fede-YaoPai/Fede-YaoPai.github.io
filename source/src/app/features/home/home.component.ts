@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TRANSACTIONS } from 'src/app/core/database/transactions/transactions';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
-import { LoggedUser, Transaction } from 'src/app/models/app.models';
+import { LoggedUser, Transaction, User } from 'src/app/models/app.models';
+import { getUserBy } from 'src/app/shared/utils/functions';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.loggedUser = this.authService.getLoggedUser();
 
     if (this.loggedUser) {
-      this.transactions = TRANSACTIONS.filter((t: Transaction) => t.recipient === this.loggedUser?.id)
+      this.transactions = this.loggedUser.isAdmin ? TRANSACTIONS : TRANSACTIONS.filter((t: Transaction) => t.recipient === this.loggedUser?.id);
     }
   }
 
@@ -32,6 +33,10 @@ export class HomeComponent implements OnInit {
     const getRoundedPercent = (total: number, partial: number) => Math.trunc((partial / total) * 100);
 
     return percent ? getRoundedPercent(this.loggedUser?.amountLoaned!, totalReimbursed) : totalReimbursed;
+  }
+
+  public getTransactionRecipient(recipientId: string): User | undefined {
+    return getUserBy('id', recipientId);
   }
 
 }
