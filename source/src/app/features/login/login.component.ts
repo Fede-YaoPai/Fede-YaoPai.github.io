@@ -44,7 +44,7 @@ export class LoginComponent {
           }
 
           this.loadingButton = false;
-        }, 750);
+        }, 500);
       }
     }
   }

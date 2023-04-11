@@ -1,11 +1,19 @@
 import { User } from "src/app/models/app.models";
 
+export enum UserNames {
+  Sfeduo = 'sfeduo',
+  Babbo = 'babbo',
+  Uiueo = 'uiueo',
+  Nineo = 'nineo',
+  Aletta = 'aletta'
+}
+
 export const USERS: User[] = [
   {
     id: '0',
     name: 'Federico',
     lastname: 'Lecca',
-    username: 'sfeduo',
+    username: UserNames.Sfeduo,
     password: 'Sfeduo1989!',
     sex: 'M'
   },
@@ -13,7 +21,7 @@ export const USERS: User[] = [
     id: '1',
     name: 'Vladimiro',
     lastname: 'Lecca',
-    username: 'babbo',
+    username: UserNames.Babbo,
     password: 'Babbo1954!',
     amountLoaned: 4950,
     sex: 'M'
@@ -22,7 +30,7 @@ export const USERS: User[] = [
     id: '2',
     name: 'Gabriella',
     lastname: 'Tempobono',
-    username: 'uiueo',
+    username: UserNames.Uiueo,
     password: 'Uiueo1958!',
     amountLoaned: 4950,
     sex: 'F'
@@ -31,7 +39,7 @@ export const USERS: User[] = [
     id: '3',
     name: 'Alba',
     lastname: 'Vissani',
-    username: 'nineo',
+    username: UserNames.Nineo,
     password: 'Uiueo1958!',
     amountLoaned: 4950,
     sex: 'F'
@@ -40,7 +48,7 @@ export const USERS: User[] = [
     id: '4',
     name: 'Alessandra',
     lastname: 'Lecca',
-    username: 'aletta',
+    username: UserNames.Aletta,
     password: 'Aletta1981!',
     amountLoaned: 4950,
     sex: 'F'
