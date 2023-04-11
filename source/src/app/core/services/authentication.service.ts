@@ -5,6 +5,7 @@ import { findUser, getLoggedUserFromUser } from 'src/app/shared/utils/functions'
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { RoutePaths } from 'src/app/models/routes.models';
+import { USERS } from '../database/users/users';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,10 @@ export class AuthenticationService {
   public user: Observable<LoggedUser | undefined>;
 
   constructor(private messageService: MessageService, private router: Router) {
-    this._loggedIn = new BehaviorSubject<boolean>(false);
+    this._loggedIn = new BehaviorSubject<boolean>(true);
     this.loggedIn = this._loggedIn.asObservable();
 
-    this._user = new BehaviorSubject<LoggedUser | undefined>(undefined);
+    this._user = new BehaviorSubject<LoggedUser | undefined>(USERS[1]);
     this.user = this._user.asObservable();
   }
 
@@ -41,6 +42,11 @@ export class AuthenticationService {
       this._user.next(loggedUser);
       this._loggedIn.next(true);
 
+      this.messageService.add({
+        severity: 'info',
+        summary: `Benvenut${user.sex === 'M' ? 'o' : 'a'} ${username}!`
+      });
+
       this.router.navigateByUrl(RoutePaths.Home);
     }
     else {
@@ -57,6 +63,8 @@ export class AuthenticationService {
   public logOut(): void {
     this._user.next(undefined);
     this._loggedIn.next(false);
+
+    this.router.navigateByUrl(RoutePaths.Login);
   }
 
 }

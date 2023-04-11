@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -9,6 +9,11 @@ import { FeaturesModule } from './features/features.module';
 
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+
+import localeIt from '@angular/common/locales/it';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeIt);
 
 @NgModule({
   declarations: [
@@ -23,7 +28,11 @@ import { MessageService } from 'primeng/api';
     ToastModule
   ],
   providers: [
-    MessageService
+    MessageService,
+    {
+      provide: LOCALE_ID,
+      useValue: 'it'
+    }
   ],
   bootstrap: [AppComponent]
 })

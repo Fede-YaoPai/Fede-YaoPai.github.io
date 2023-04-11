@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { ButtonModule } from 'primeng/button';
 
 const layoutComponents = [
   HeaderComponent,
@@ -13,7 +14,8 @@ const layoutComponents = [
     ...layoutComponents
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ButtonModule
   ],
   exports: [
     ...layoutComponents

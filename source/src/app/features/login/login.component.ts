@@ -40,7 +40,7 @@ export class LoginComponent {
           const success: boolean = this.authService.logIn(username, password);
 
           if (!success) {
-            this.loginForm.reset();
+            this.loginForm.controls[this.controlNames.password].reset();
           }
 
           this.loadingButton = false;

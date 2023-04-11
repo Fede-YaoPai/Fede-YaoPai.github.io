@@ -1,1 +1,62 @@
-<p>home works!</p>
+<div class="feature-home">
+  <ng-container *ngIf="transactions.length; else noTransactions">
+    <div class="flex flex-column align-items-center mb-4">
+      <p>
+        Registro transazioni per
+        <strong>
+          {{ loggedUser?.name + ' ' + loggedUser?.lastname + ' (' + loggedUser?.username + ')' }}.
+        </strong>
+      </p>
+    </div>
+    <div style="width: 85%; margin: auto">
+      <p-table
+        [value]="transactions"
+        [paginator]="transactions.length > 10"
+        [rows]="5"
+        [showCurrentPageReport]="false"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        currentPageReportTemplate="{first} - {last} di {totalRecords} transazioni totali"
+        [rowsPerPageOptions]="[10, 25, 50]">
+        <ng-template pTemplate="caption">
+          <div>
+            <span class="mb-3">
+              Ammontare rimborsato sul totale: {{ (getTotalReimbursed() | currency: 'EUR') + ' / ' + (loggedUser?.amountLoaned | currency: 'EUR') }}
+            </span>
+            <div style="height: 0.33rem"></div>
+            <p-progressBar [value]="getTotalReimbursed(true) | number"></p-progressBar>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="date">Data bonifico <p-sortIcon field="date"></p-sortIcon></th>
+            <th>Ammontare</th>
+            <th>Screenshot</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-transaction>
+          <tr>
+            <td>{{ transaction.date | date: 'shortDate' }}</td>
+            <td>{{ transaction.amount | currency: 'EUR' }}</td>
+            <td>
+              <div class="w-full h-full relative pl-2">
+                <p-image
+                  [src]="'assets/images/' + transaction.screenshot"
+                  alt="Screenshot transazione"
+                  [height]="'42'"
+                  [preview]="true">
+                  <ng-template pTemplate="indicator">
+                    <i class="pi pi-eye" style="font-size: 0.85rem"></i>
+                  </ng-template>
+                </p-image>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #noTransactions>
+  <p class="text-center mt-7">Nessuna transazione da visualizzare.</p>
+</ng-template>

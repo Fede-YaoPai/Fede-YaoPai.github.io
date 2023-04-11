@@ -4,6 +4,7 @@ export interface LoggedUser {
   lastname: string;
   username: string;
   amountLoaned?: number;
+  sex: 'M' | 'F'
 }
 
 export interface User extends LoggedUser {
@@ -13,6 +14,7 @@ export interface User extends LoggedUser {
 export interface Transaction {
   date: Date;
   amount: number;
-  sender: User | string;
-  recipient: User | string;
+  sender: string;
+  recipient: string;
+  screenshot: string;
 }

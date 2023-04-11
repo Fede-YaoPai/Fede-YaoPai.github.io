@@ -6,7 +6,8 @@ export const TRANSACTIONS: Transaction[] = [
   {
     date: new Date(),
     amount: 100,
-    sender: getUserBy('id', '0') || USER_NOT_FOUND,
-    recipient: getUserBy('id', '3') || USER_NOT_FOUND
+    sender: getUserBy('username', 'sfeduo')?.id || USER_NOT_FOUND,
+    recipient: getUserBy('username', 'babbo')?.id || USER_NOT_FOUND,
+    screenshot: 'test.jpg'
   }
 ];
