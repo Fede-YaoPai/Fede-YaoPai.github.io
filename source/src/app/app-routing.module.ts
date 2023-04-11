@@ -7,7 +7,7 @@ import { RoutePaths } from './models/routes.models';
 import { LoginPageGuard } from './core/guards/login-page.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: RoutePaths.Home, pathMatch: 'full'},
+  {path: '', redirectTo: RoutePaths.Login, pathMatch: 'full'},
   {
     path: RoutePaths.Home,
     component: HomeComponent,
@@ -18,7 +18,7 @@ const routes: Routes = [
     component: LoginComponent,
     canActivate: [LoginPageGuard]
   },
-  {path: '**', redirectTo: RoutePaths.Home, pathMatch: 'full'}
+  {path: '**', redirectTo: RoutePaths.Login, pathMatch: 'full'}
 ];
 
 @NgModule({
