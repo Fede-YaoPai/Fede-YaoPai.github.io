@@ -18,10 +18,10 @@ export class AuthenticationService {
   public user: Observable<LoggedUser | undefined>;
 
   constructor(private messageService: MessageService, private router: Router) {
-    this._loggedIn = new BehaviorSubject<boolean>(true);
+    this._loggedIn = new BehaviorSubject<boolean>(false);
     this.loggedIn = this._loggedIn.asObservable();
 
-    this._user = new BehaviorSubject<LoggedUser | undefined>(USERS[1]);
+    this._user = new BehaviorSubject<LoggedUser | undefined>(undefined);
     this.user = this._user.asObservable();
   }
 
