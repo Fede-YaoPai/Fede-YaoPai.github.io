@@ -5,7 +5,7 @@ import { findUser, getLoggedUserFromUser } from 'src/app/shared/utils/functions'
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { RoutePaths } from 'src/app/models/routes.models';
-import { USERS } from '../database/users/users';
+
 
 @Injectable({
   providedIn: 'root'
