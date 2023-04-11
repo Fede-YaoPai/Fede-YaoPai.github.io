@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && npm run copy",
-    "copy": "copyfiles -f dist/box-auto/* ../ && copyfiles ../index.html ../404.html",
+    "copy:build": "copyfiles -u 1 dist/**/* ../",
+    "build": "ng build --output-path dist && npm run copy:build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
