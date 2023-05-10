@@ -1,10 +1,9 @@
-import { USER_NOT_FOUND } from "src/app/models/app.constants";
 import { Transaction } from "src/app/models/app.models";
 import { getUserBy } from "src/app/shared/utils/functions";
-import { UserNames } from "../users/users";
+import { UserNames } from "../../../users/users";
+import { USER_NOT_FOUND } from "src/app/models/app.constants";
 
-
-export const TRANSACTIONS_2023: Transaction[] = [
+export const TRANSACTIONS_APRIL: Transaction[] = [
   {
     date: new Date(2023, (4 - 1), 12),
     amount: 69,
@@ -32,5 +31,5 @@ export const TRANSACTIONS_2023: Transaction[] = [
     sender: getUserBy('username', UserNames.Sfeduo)?.id || USER_NOT_FOUND,
     recipient: getUserBy('username', UserNames.Aletta)?.id || USER_NOT_FOUND,
     screenshot: 'ale-1.png'
-  },
-]
+  }
+];

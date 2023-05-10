@@ -1,3 +1,4 @@
+import { BORROWERS, TOTAL_OWED } from "src/app/models/app.constants";
 import { User } from "src/app/models/app.models";
 
 export enum UserNames {
@@ -16,7 +17,8 @@ export const USERS: User[] = [
     username: UserNames.Sfeduo,
     password: 'Sfeduo1989!',
     sex: 'M',
-    isAdmin: true
+    isAdmin: true,
+    amountLoaned: TOTAL_OWED
   },
   {
     id: '1',
@@ -24,7 +26,7 @@ export const USERS: User[] = [
     lastname: 'Lecca',
     username: UserNames.Babbo,
     password: 'Babbo1954!',
-    amountLoaned: 4950,
+    amountLoaned: TOTAL_OWED / BORROWERS,
     sex: 'M'
   },
   {
@@ -33,7 +35,7 @@ export const USERS: User[] = [
     lastname: 'Tempobono',
     username: UserNames.Uiueo,
     password: 'Uiueo1958!',
-    amountLoaned: 4950,
+    amountLoaned: TOTAL_OWED / BORROWERS,
     sex: 'F'
   },
   {
@@ -42,7 +44,7 @@ export const USERS: User[] = [
     lastname: 'Vissani',
     username: UserNames.Nineo,
     password: 'Uiueo1958!',
-    amountLoaned: 4950,
+    amountLoaned: TOTAL_OWED / BORROWERS,
     sex: 'F'
   },
   {
@@ -51,7 +53,7 @@ export const USERS: User[] = [
     lastname: 'Lecca',
     username: UserNames.Aletta,
     password: 'Aletta1981!',
-    amountLoaned: 4950,
+    amountLoaned: TOTAL_OWED / BORROWERS,
     sex: 'F'
   }
 ];

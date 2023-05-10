@@ -1,10 +1,12 @@
+import { Sex } from "./app.constants";
+
 export interface LoggedUser {
   id: string;
   name: string;
   lastname: string;
   username: string;
   amountLoaned?: number;
-  sex: 'M' | 'F',
+  sex: Sex,
   isAdmin?: boolean;
 }
 
