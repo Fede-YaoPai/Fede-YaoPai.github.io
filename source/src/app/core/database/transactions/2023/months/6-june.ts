@@ -10,6 +10,6 @@ export const TRANSACTIONS_JUNE: Transaction[] = [
     amount: 104,
     sender: getUserBy('username', UserNames.Sfeduo)?.id || USER_NOT_FOUND,
     recipient: getUserBy('username', UserNames.Aletta)?.id || USER_NOT_FOUND,
-    screenshot: 'ale-3.png'
+    screenshot: 'ale-3.jpg'
   }
 ];
