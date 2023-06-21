@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "clean-deploy-folder": "node deploy-folder-cleaner.js",
     "copy:readme": "copyfiles ./README.md ../",
     "copy:build": "copyfiles -u 1 dist/**/* ../",
-    "build": "ng build --output-path dist && npm run copy:readme && npm run copy:build",
+    "create-404-file": "node 404-file-creator.js",
+    "build": "npm run clean-deploy-folder && ng build --output-path dist && npm run copy:readme && npm run copy:build && npm run create-404-file",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
