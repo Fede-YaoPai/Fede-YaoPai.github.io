@@ -2,10 +2,15 @@
   <div class="flex justify-content-between">
     <div>
       <h3 class="m-0">Transazioni Box Auto</h3>
-      <small>{{ (authService.user | async)?.username || 'Utente sconosciuto' }}</small>
+      <small>
+        Utente:
+        <span class="font-bold">
+          {{ (authService.user | async)?.username || 'Sconosciuto' }}
+        </span>
+      </small>
     </div>
     <div class="flex justify-content-center align-items-center">
-      <p-button label="Logout" styleClass="p-button-raised p-button-text text-white" [style]="{fontSize: '0.8rem', padding: '0.5rem'}" (onClick)="logOut()"></p-button>
+      <p-button label="Logout" styleClass="p-button-raised p-button-text bg-white" [style]="{fontSize: '1rem', padding: '0.5rem 0.75rem'}" (onClick)="logOut()"></p-button>
     </div>
   </div>
 </div>

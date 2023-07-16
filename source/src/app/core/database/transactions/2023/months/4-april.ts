@@ -3,7 +3,7 @@ import { getUserBy } from "src/app/shared/utils/functions";
 import { UserNames } from "../../../users/users";
 import { USER_NOT_FOUND } from "src/app/models/app.constants";
 
-export const TRANSACTIONS_APRIL: Transaction[] = [
+export const TRANSACTIONS_APRIL_2023: Transaction[] = [
   {
     date: new Date(2023, (4 - 1), 12),
     amount: 69,
