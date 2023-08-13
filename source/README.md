@@ -20,17 +20,6 @@
 
 <br />
 
-- Eliminare dalla cartella root (<u>**FEDE-YAOPAI.GITHUB.IO**</u>) tutti i files, <u>**tranne**</u>:
-
-  - **.git**
-  - **source**
-  - **.gitignore**
+- Lanciare il comando <u>**npm run build**</u> per effettuare la build dell'applicativo. Questo comando si occupa della cancellazione dei files superflui nella root directory, ri-creazione di tutti i files necessari alla pipeline nella stessa, e copia del file index.html come 404.html per il redirect.
 
 <br />
-
-- Lanciare il comando <u>**npm run build**</u> per effettuare la build dell'applicativo.
-
-<br />
-
-- Copiare il file index.html e rinominarlo <u>**404.html**</u>. Incollarlo quindi a livello della root (<u>**FEDE-YAOPAI.GITHUB.IO**</u>).
-
