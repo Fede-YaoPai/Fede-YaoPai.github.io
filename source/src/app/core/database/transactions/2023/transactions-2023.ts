@@ -5,6 +5,7 @@ import { TRANSACTIONS_JUNE_2023 } from "./months/6-june";
 import { TRANSACTIONS_JULY_2023 } from "./months/7-july";
 import { TRANSACTIONS_AUGUST_2023 } from "./months/8-august";
 import { TRANSACTIONS_SEPTEMBER_2023 } from "./months/9-september";
+import { TRANSACTIONS_OCTOBER_2023 } from "./months/10-october";
 
 
 export const TRANSACTIONS_2023: Transaction[] = [
@@ -13,5 +14,6 @@ export const TRANSACTIONS_2023: Transaction[] = [
   ...TRANSACTIONS_JUNE_2023,
   ...TRANSACTIONS_JULY_2023,
   ...TRANSACTIONS_AUGUST_2023,
-  ...TRANSACTIONS_SEPTEMBER_2023
+  ...TRANSACTIONS_SEPTEMBER_2023,
+  ...TRANSACTIONS_OCTOBER_2023
 ];

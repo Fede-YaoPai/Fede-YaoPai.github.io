@@ -45,7 +45,8 @@ export class AuthenticationService {
       this.messageService.add({
         severity: 'info',
         summary: `Benvenut${user.sex === 'M' ? 'o' : 'a'} ${username}!`,
-        sticky: true
+        sticky: false,
+        life: 6000
       });
 
       this.router.navigateByUrl(RoutePaths.Home);
