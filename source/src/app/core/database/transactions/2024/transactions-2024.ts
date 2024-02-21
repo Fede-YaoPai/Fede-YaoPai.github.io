@@ -1,7 +1,9 @@
 import { Transaction } from "src/app/models/app.models";
 import { TRANSACTIONS_JANUARY_2024 } from "./months/1-january";
+import { TRANSACTIONS_FEBRUARY_2024 } from "./months/2-february";
 
 
 export const TRANSACTIONS_2024: Transaction[] = [
-  ...TRANSACTIONS_JANUARY_2024
+  ...TRANSACTIONS_JANUARY_2024,
+  ...TRANSACTIONS_FEBRUARY_2024
 ];
