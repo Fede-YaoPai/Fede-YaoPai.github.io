@@ -24,6 +24,6 @@
 
 <br />
 
-- Committare e pushare le modifiche sul branch main DALLA ROOT FOLDER.
+- DALLA ROOT FOLDER, Committare e pushare le modifiche sul branch main.
 
 <br />
