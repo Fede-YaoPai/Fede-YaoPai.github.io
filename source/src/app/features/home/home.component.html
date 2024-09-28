@@ -12,12 +12,12 @@
       <p-table
         [value]="transactions"
         [paginator]="transactions.length > 10"
-        [rows]="5"
+        [rows]="rowsPerPageOptions[0]"
         [showCurrentPageReport]="false"
         [tableStyle]="{ 'min-width': '50rem' }"
         [styleClass]="'p-datatable-striped'"
         currentPageReportTemplate="{first} - {last} di {totalRecords} transazioni totali"
-        [rowsPerPageOptions]="[10, 25, 50]"
+        [rowsPerPageOptions]="rowsPerPageOptions"
         [sortField]="'date'"
         [sortOrder]="-1">
         <ng-template pTemplate="caption">

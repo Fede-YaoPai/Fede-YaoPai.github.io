@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   public loggedUser: LoggedUser | undefined;
   public transactions: Transaction[] = [];
+  public rowsPerPageOptions: Array<number> = [10, 25, 50]
 
   constructor(private authService: AuthenticationService) {}
 
