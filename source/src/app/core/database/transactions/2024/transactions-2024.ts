@@ -8,6 +8,8 @@ import { TRANSACTIONS_JUNE_2024 } from "./months/6-june";
 import { TRANSACTIONS_JULY_2024 } from "./months/7-july";
 import { TRANSACTIONS_AUGUST_2024 } from "./months/8-august";
 import { TRANSACTIONS_SEPTEMBER_2024 } from "./months/9-september";
+import { TRANSACTIONS_OCTOBER_2024 } from "./months/10-october";
+import { TRANSACTIONS_NOVEMBER_2024 } from "./months/11-november";
 
 
 export const TRANSACTIONS_2024: Transaction[] = [
@@ -19,5 +21,7 @@ export const TRANSACTIONS_2024: Transaction[] = [
   ...TRANSACTIONS_JUNE_2024,
   ...TRANSACTIONS_JULY_2024,
   ...TRANSACTIONS_AUGUST_2024,
-  ...TRANSACTIONS_SEPTEMBER_2024
+  ...TRANSACTIONS_SEPTEMBER_2024,
+  ...TRANSACTIONS_OCTOBER_2024,
+  ...TRANSACTIONS_NOVEMBER_2024
 ];

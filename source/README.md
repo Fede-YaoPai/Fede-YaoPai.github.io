@@ -24,6 +24,6 @@
 
 <br />
 
-- DALLA ROOT FOLDER (Fede-YaoPai.github.io), Committare e pushare le modifiche sul branch main.
+- DALLA ROOT FOLDER (Fede-YaoPai.github.io), Committare e pushare le modifiche sul branch main. Partirà la pipeline che si occuperà del deploy su: **fede-yaopai.github.io**
 
 <br />
