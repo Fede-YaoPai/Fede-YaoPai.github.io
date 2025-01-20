@@ -12,7 +12,7 @@
 
 <br />
 
-- Aggiornare l' array TRANSACTIONS contenuto nel file <u>**transactions.ts**</u>.
+- Aggiornare l'array TRANSACTIONS contenuto nel file <u>**transactions.ts**</u>.
 
 <br />
 
@@ -20,7 +20,7 @@
 
 <br />
 
-- Lanciare il comando <u>**npm run build**</u> per effettuare la build dell'applicativo. Questo comando si occupa della cancellazione dei files superflui nella root directory, ri-creazione di tutti i files necessari alla pipeline nella stessa, e copia del file index.html come 404.html per il redirect.
+- Da source/ lanciare il comando <u>**npm run build**</u> per effettuare la build dell'applicativo. Questo comando si occupa della cancellazione dei files superflui nella root directory, ri-creazione di tutti i files necessari alla pipeline nella stessa, e copia del file index.html come 404.html per il redirect.
 
 <br />
 
