@@ -12,7 +12,7 @@
 
 <br />
 
-- Aggiornare l' array TRANSACTIONS contenuto nel file <u>**transactions.ts**</u>.
+- Aggiornare l'array TRANSACTIONS contenuto nel file <u>**transactions.ts**</u>.
 
 <br />
 

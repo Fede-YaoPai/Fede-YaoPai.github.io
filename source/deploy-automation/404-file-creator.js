@@ -1,9 +1,11 @@
 const fs = require('fs');
 
+const folderPath = '../';
+
 function create404HtmlFile() {
   const [sourceFilePath, destinationFilePath, callback] = [
-    '../' + 'index.html',
-    '../' + '404.html',
+    folderPath + 'index.html',
+    folderPath + '404.html',
     err => {
       if (err) console.error('Error copying file:', err);
       else console.log('File copied successfully.');

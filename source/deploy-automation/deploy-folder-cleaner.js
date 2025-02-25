@@ -9,6 +9,7 @@ function cleanDeployFolder(folderPath, excludeFiles) {
   fs.readdir(folderPath, (err, files) => {
     if (err) {
       console.error(`Error reading folder: ${err}`);
+      
       return;
     }
 

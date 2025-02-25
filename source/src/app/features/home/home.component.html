@@ -34,7 +34,7 @@
             <th pSortableColumn="date">Data bonifico <p-sortIcon field="date"></p-sortIcon></th>
             <th *ngIf="loggedUser.isAdmin">Destinatario</th>
             <th>Ammontare</th>
-            <th>Screenshot</th>
+            <th>Contabile</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-transaction>
@@ -46,7 +46,7 @@
               <div class="w-full h-full relative pl-2">
                 <p-image
                   [src]="'assets/images/' + transaction.screenshot"
-                  alt="Screenshot transazione"
+                  alt="Screenshot contabile"
                   [height]="'42'"
                   [preview]="true">
                   <ng-template pTemplate="indicator">
