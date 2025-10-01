@@ -7,6 +7,10 @@ import { TRANSACTIONS_MAY_2025 } from "./months/5-may";
 import { TRANSACTIONS_JUNE_2025 } from "./months/6-june";
 import { TRANSACTIONS_JULY_2025 } from "./months/7-july";
 import { TRANSACTIONS_AUGUST_2025 } from "./months/8-august";
+import { TRANSACTIONS_SEPTEMBER_2025 } from "./months/9-september";
+import { TRANSACTIONS_OCTOBER_2025 } from "./months/10-october";
+import { TRANSACTIONS_NOVEMBER_2025 } from "./months/11-november";
+import { TRANSACTIONS_DECEMBER_2025 } from "./months/12-december";
 
 
 export const TRANSACTIONS_2025: Transaction[] = [
@@ -17,5 +21,9 @@ export const TRANSACTIONS_2025: Transaction[] = [
   ...TRANSACTIONS_MAY_2025,
   ...TRANSACTIONS_JUNE_2025,
   ...TRANSACTIONS_JULY_2025,
-  ...TRANSACTIONS_AUGUST_2025
+  ...TRANSACTIONS_AUGUST_2025,
+  ...TRANSACTIONS_SEPTEMBER_2025,
+  ...TRANSACTIONS_OCTOBER_2025,
+  ...TRANSACTIONS_NOVEMBER_2025,
+  ...TRANSACTIONS_DECEMBER_2025
 ];
